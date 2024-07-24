@@ -45,7 +45,7 @@ function e3() {
 
   console.log(`The most frequent word is ${word}`);
 }
-e3();
+// e3();
 
 //4.Calculate the total annual income of the person by extracting the numbers from the following text.
 // 'He earns 5000 euro from salary per month, 10000 euro annual bonus, 15000 euro online courses per month.'
@@ -71,4 +71,9 @@ function e4() {
   console.log(`The anual income is ${total} €`);
 }
 
-e4();
+// e4();
+
+alert('HI')
+prompt('required text', 'optional text')
+const agree = confirm('Are you sure you like to delete? ')
+console.log(agree)
