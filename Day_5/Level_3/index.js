@@ -48,3 +48,4 @@ function e1() {
 
 }
 // e1();
+//TODO Level 3  last 3 exer. about countries array
