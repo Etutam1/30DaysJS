@@ -124,4 +124,23 @@ function e9() {
   }
   console.log(array);
 }
-e9();
+// e9();
+
+// 10.Develop a small script which generate a six characters random id:
+
+function e10() {
+  let chars = "abcdefghijklmnopqrstuvwxyz0123456789";
+  let id = '';
+  let num;
+  do {
+    num = Math.floor(Math.random() * chars.length);
+    if (!id.includes(chars.charAt(num))) {
+      id = id.concat(chars.charAt(num));
+    }
+  } while (id.length < 6);
+
+  console.debug(id)
+}
+// e10();
+
+
