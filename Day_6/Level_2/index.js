@@ -1,5 +1,5 @@
 const prompt = require("prompt-sync")();
-const countries = require("../countries");
+const countries = require("../../arrays/countries");
 
 // 1.Develop a small script which generate any number of characters random id:
 
@@ -238,9 +238,9 @@ function e13() {
 }
 // e13();
 
-// 14.This is a fruit array , ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop without using a reverse method.
+// 15.This is a fruit array , ['banana', 'orange', 'mango', 'lemon'] reverse the order using loop without using a reverse method.
 
-function e14() {
+function e15() {
   const fruits = ["banana", "orange", "mango", "lemon"];
   const reversedFruits = [];
 
@@ -250,4 +250,29 @@ function e14() {
 
   console.log(reversedFruits); // Output: ['lemon', 'mango', 'orange', 'banana']
 }
-// e14()
+// e15()
+
+// 16.Print all the elements of array as shown below.
+// HTML
+// CSS
+// JS
+// REACT
+// NODE
+// EXPRESS
+// MONGODB
+
+function e16() {
+  const fullStack = [
+    ["HTML", "CSS", "JS", "React"],
+    ["Node", "Express", "MongoDB"],
+  ];
+
+  for (let i = 0; i < fullStack.length; i++) {
+    for (const tech of fullStack[i]) {
+      console.debug(`${tech}\t`);
+    }
+  }
+}
+// e16();
+
+
