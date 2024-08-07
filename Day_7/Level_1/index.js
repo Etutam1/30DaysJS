@@ -65,16 +65,12 @@ const calculteBMI = ()=>{
       }
       
       function showResults() {
-        let result;
-        if (arguments[0] < 18.5) {
-          result = "Underweigth";
-        } else if (arguments[0].bmi < 25) {
-          result = "Normal";
-        } else if (arguments[0].bmi < 30) {
-          result = "Overweight";
-        } else {
-          result = "Obese";
-        }
+        let result =
+        arguments[0] < 18.5 ? "Underweigth" :
+        arguments[0].bmi < 25 ? "Normal" :
+        arguments[0].bmi < 30 ? "Overweight":
+                                "Obese";
+        
         console.log(arguments[0].name, `BMI at ${arguments[0].bmi} is ${result}`); 
     }
 
@@ -82,7 +78,7 @@ const calculteBMI = ()=>{
       
 }
 
-// calculteBMI()
+calculteBMI()
 
 // 14.Write a function called checkSeason, it takes a month parameter and returns the season:Autumn, Winter, Spring or Summer.
 
