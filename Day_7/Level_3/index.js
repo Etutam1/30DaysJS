@@ -1,6 +1,6 @@
 
 const prompt = require ('prompt-sync')();
-
+const countries = require('../../arrays/countries')
 // 1.Modify the userIdGenerator function. Declare a function name userIdGeneratedByUser. 
 // It doesn’t take any parameter but it takes two inputs using prompt(). 
 // One of the input is the number of characters and the second input is the number of ids which are supposed to be generated.
@@ -40,5 +40,27 @@ const userIdGeneratedByUser = function(){
 
 
 
+// 2.Call your function shuffleArray, it takes an array as a parameter and it returns a shuffled array
+
+const suffleArray = function (array) {
+
+    if (!Array.isArray(array)) {
+        return TypeError(`El parametro debe ser un array`)
+    }
+
+    let aux = array.slice()
+
+    for (let i = aux.length - 1; i > 0; i--) {
+       
+        const idx =Math.floor(Math.random() * (i + 1));
+        [aux[i], aux[idx]] = [aux[idx], aux[i]];
+        
+    }
+    return aux
+    
+}
+
+console.log(countries)
+console.log(suffleArray(countries))
 
 
