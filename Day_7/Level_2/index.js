@@ -35,3 +35,74 @@ const swapValues = (x, y)=>{
 }
 
 //  console.log(swapValues(4,5))
+
+
+
+// 10.Declare a function name sumOfNumbers. It takes a number parameter and it adds all the numbers in that range.
+
+const sumOfNumbers = n =>{
+
+    let sum = 0
+    for (let index = 0; index <= n; index++) {
+        sum  += index 
+    }
+    return sum
+}
+
+// console.log(sumOfNumbers(100))
+
+// 11.Declare a function name sumOfOdds. It takes a number parameter and it adds all the odd numbers in that - range.
+
+const sumOfOdds = n =>{
+
+    let sum = 0;
+    for (let index = 0; index <= n; index++) {
+        sum += index%2 == 1 ? index : 0
+    }
+    return sum
+}
+
+// console.log(sumOfOdds(100))
+
+// 12.Declare a function name sumOfEven. It takes a number parameter and it adds all the even numbers in that - range.
+
+const sumOfEven = n =>{
+
+    let sum = 0
+
+    for (let index = 0; index <= n; index++) {
+         sum += index % 2 == 0 ? index : 0 
+        
+    }
+    return sum
+}
+
+// console.log(sumOfEven(100))
+
+// 13.Declare a function name evensAndOdds . It takes a positive integer as parameter and it counts number of evens and odds in the number.
+
+const evensAndOdds = n =>{
+    let eCount = 0;
+    let oCount = 0;
+
+    for (let index = 0; index <= n; index++) {
+        
+        index % 2 == 1 ? oCount++ : eCount++
+        
+    }
+
+    console.log(`The number of odds are ${oCount}`)
+    console.log(`The number of evens are ${eCount}`)
+}
+
+// evensAndOdds(100)
+
+
+// 14.Write a function which takes any number of arguments and return the sum of the arguments
+
+const sumNums = function(){
+
+    console.log(arguments[0])
+}
+
+sumNums(0,1,2,3)
