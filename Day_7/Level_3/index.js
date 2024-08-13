@@ -87,7 +87,7 @@ function sumOfArrayItems(array) {
   let sum = 0
   for (const item of array) {
     if (isNaN(item)){
-      throw new Error('El array debe contener solo números')
+      throw new Error('array must contain only numeric values')
     }
     sum += item
   }
