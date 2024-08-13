@@ -101,8 +101,58 @@ const evensAndOdds = n =>{
 // 14.Write a function which takes any number of arguments and return the sum of the arguments
 
 const sumNums = function(){
+    let sum = 0
+    for (let index = 0; index < arguments.length; index++) {
+        sum += arguments[index]
+    }
 
-    console.log(arguments[0])
+    console.log(sum)
+
 }
 
-sumNums(0,1,2,3)
+// sumNums(0,1,2,3)
+
+
+// 15.Writ a function which generates a randomUserIp.
+
+const randomUserIp = ()=>{
+
+    let ip = []
+
+    do {
+        ip.push(Math.floor(Math.random() * 256))
+    }while(ip.length < 4)
+
+    console.log(ip.join('.'))
+}
+
+// randomUserIp();
+
+// 16.Write a function which generates a randomMacAddress
+
+function randomMacAddress(){
+    const chars = '0123456789ABCDEF'
+    let mac = []
+
+    do{
+        let pair = []
+
+        do {
+            let char = chars[Math.floor(Math.random() * chars.length)]
+            pair.push(char)
+        } while (pair.length < 2);
+       
+        mac.push(pair)
+       
+    }while (mac.length < 6) 
+    
+    for (let index = 0; index < mac.length; index++) {
+        mac[index] = mac[index].join('')
+    }
+    
+    console.log(mac.join(':'))
+}
+
+// randomMacAddress()
+
+
