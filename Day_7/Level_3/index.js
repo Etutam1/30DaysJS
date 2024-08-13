@@ -74,3 +74,25 @@ const factorial = (n) => {
 };
 
 // console.log(factorial(10));
+
+// 3.Call your function isEmpty, it takes a parameter and it checks if it is empty or not
+
+function isEmpty(param) {
+  console.log(param.trim() === '' ? `\'${param}\' is empty` : `\'${param}\' is not empty`)
+}
+
+// 4.Write a function called sumOfArrayItems, it takes an array parameter and return the sum of all the items. Check if all the array items are number types. If not give return reasonable feedback.
+
+function sumOfArrayItems(array) {
+  let sum = 0
+  for (const item of array) {
+    if (isNaN(item)){
+      throw new Error('El array debe contener solo números')
+    }
+    sum += item
+  }
+  console.log(sum)
+}
+
+// sumOfArrayItems(['a',2,3,6])
+
