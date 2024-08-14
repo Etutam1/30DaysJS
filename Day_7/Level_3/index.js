@@ -96,3 +96,75 @@ function sumOfArrayItems(array) {
 
 // sumOfArrayItems(['a',2,3,6])
 
+// 5.Write a function called average, it takes an array parameter and returns the average of the items. Check if all the array items are number types. If not give return reasonable feedback.
+
+function average(array) {
+
+  let sum = 0
+
+  for (const element of array) {
+    if (isNaN(element)) {
+      throw new Error('Array must contain only numeric values')
+    }
+    sum += element
+  }
+
+  return sum/array.length
+}
+
+// console.log(average([1,2,3,4,5,6]))
+
+// 6.Write a function called isPrime, which checks if a number is prime number.
+
+function isPrime(n) {
+  
+  if (n <=1) {
+    return false
+  }else if (n == 2) {
+    return true
+  }else if (n%2 ==0) {
+    return false 
+  }
+
+  for (let index = 3; index <= Math.sqrt(n); index+=2) {
+    if (n % index== 0) {
+      return false
+    }
+    
+  }
+  return true
+}
+
+// console.log(isPrime(17))
+
+// 7.Write a function which checks if all the items of the array are the same data type.
+
+function sameType(arr) {
+  
+  return arr.every(i=> typeof i === typeof arr[0])
+}
+
+// console.log(sameType([1,2,'a']))
+
+// 8.JavaScript variable name does not support special characters or symbols except $ or _. Write a function isValidVariable which check if a variable is valid or invalid variable.
+
+function isValidVariable(v) {
+  
+  return /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(v)
+}
+// let variable = '{}v'
+// console.log(isValidVariable(variable) ? `${variable} is valid` : `${variable} is not valid`)
+
+// 9.Write a function which returns array of seven random numbers in a range of 0-9. All the numbers must be unique.
+
+function sevenRandomNumbers() {
+  let set = new Set()
+
+    do{
+      set.add(Math.floor(Math.random() * 10))
+    }while(set.size < 7 )
+  return set
+  
+}
+
+console.log(sevenRandomNumbers())
