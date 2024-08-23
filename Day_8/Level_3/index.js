@@ -299,7 +299,7 @@ function main() {
     showProducts();
     let opt = null
     do{
-       showMenu(u.id);
+       showMenu(u._id);
        opt = selectOption(u._id);   
     }while(opt != 5)
    
