@@ -269,17 +269,19 @@ function selectOption(uId) {
     switch (opt) {
       case 1:
         rateProduct(uId, product);
+        showProducts()
         break;
       case 2:
         likeProduct(uId, product)
+        showProducts()
         break;
       case 3:
         if(checkLikes(uId)){
             unlikeProduct(uId, product)
+            showProducts()
         }else{
             console.log('You dont have registered likes');     
         }
-        
         break;
       case 4:
         productAverageRating(product);
@@ -298,10 +300,7 @@ function main() {
     let opt = null
     do{
        showMenu(u.id);
-       opt = selectOption(u._id);
-       if(opt != 5 && opt != 4){
-        showProducts()
-       }
+       opt = selectOption(u._id);   
     }while(opt != 5)
    
     console.log('Bye!');
