@@ -49,14 +49,14 @@ function countriesLetters(){
     const letterCountMap = countries2.reduce((acc, c) => {
         const firstLetter = c.name.charAt(0);
         if (!acc[firstLetter]) {
-            acc[firstLetter] = { times: 1 };
+            acc[firstLetter] = {letter: firstLetter, times: 1 };
         } else {
             acc[firstLetter].times += 1;
         }
         return acc;
     }, {});
     
-    console.log(letterCountMap);
+    console.log(Object.values(letterCountMap))
     
 }
 
