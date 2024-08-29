@@ -62,6 +62,12 @@ const mostPopulatedCountries = function (arr, limit) {
  
 // console.log(mostPopulatedCountries(countries, 10))
 
+// 4.*** Try to develop a program which calculate measure of central tendency of a 
+// sample(mean, median, mode) and measure of variability(range, variance, standard deviation). 
+// In addition to those measures find the min, max, count, percentile, and frequency distribution of the sample. 
+// You can create an object called statistics and create all the functions which do statistical calculations as method for the 
+// statistics object. Check the output below.
+
 
 const statistics = {
   ages: [31, 26, 34, 37, 27, 26, 32, 32, 26, 27, 27, 24, 32, 33, 27, 25, 26, 38, 37, 31, 34, 24, 33, 29, 26],
@@ -110,11 +116,58 @@ const statistics = {
     } else {
       return sorted[idx]
     } 
+  },
+  variance: function () {
+    return this.ages.reduce((acc,a)=>{
+      return acc + (a -this.mean()) ** 2
+    }, 0)/(this.ages.length - 1)
+  },
+  std: function () {
+    return Math.sqrt(this.variance())
+  },
+  freqDist: function () {
+    return Object.values(this.ages.reduce((acc,a)=>{
+      if (!acc[a]) {
+        acc[a]= {age: a, times: 1}
+      }else{
+        acc[a].times+=1      
+      }
+      return acc
+    }, {}))
+  }, 
+  percentile: function (n) {
+    let sort = this.ages.sort((a,b)=> a - b)
+    let i = (n/100)*(n+1)
+    if(i.toString().includes('.')){
+      let x = sort[Math.floor(i)]
+      let y = sort[Math.ceil(i)]
+      if(x == y){
+        return x
+      }else{
+        let decimalPart = i.toFixed(2).toString().split('.')[1]
+        let decimal = Number('.'.concat(decimalPart).padStart(4, '0'))
+        return n + (decimal * (y - x))
+      }
+    }else{
+      return sort[i]
+    }
+  },
+  describe: function () {
+    console.log(`Count: ${this.count()}`);
+    console.log(`Sum: ${this.sum()}`);
+    console.log(`Min: ${this.min()}`);
+    console.log(`Max: ${this.max()}`);
+    console.log(`Range: ${this.range()}`);
+    console.log(`Mean: ${this.mean()}`);
+    console.log(`Median: ${this.median()}`);
+    console.log(`Mode: ${JSON.stringify(this.mode())}`);
+    console.log(`Variance: ${this.variance()}`);
+    console.log(`Standard Deviation: ${this.std()}`);
+    console.log(`Frequency Distribution: ${JSON.stringify(this.freqDist())}`);
   }
-  
 }
 
-console.log(statistics.median());
+console.log(statistics.describe());
 
 
 // Medidas de Tendencia Central
@@ -132,10 +185,10 @@ console.log(statistics.median());
 
 // El rango es la diferencia entre el valor máximo y el valor mínimo de la muestra. Mide la dispersión total de los datos.
 // Varianza (Variance):
-
 // La varianza mide la dispersión de los valores respecto a la media. Se calcula promediando los cuadrados de las diferencias entre cada valor y la media de la muestra.
-// Desviación Estándar (Standard Deviation):
+// Desviación Estándar 
 
+// (Standard Deviation):
 // La desviación estándar es la raíz cuadrada de la varianza. Mide cuánto se desvían, en promedio, los valores de la media. Es una medida de la dispersión más interpretativa que la varianza.
 // Otros Estadísticos
 // Mínimo (Min):
