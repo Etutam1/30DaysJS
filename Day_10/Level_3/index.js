@@ -1,5 +1,6 @@
 require("module-alias/register");
 const countries = require("@arrays/countries_data");
+const moment = require("moment/moment");
 
 // 1.How many languages are there in the countries object file.
 
@@ -25,4 +26,34 @@ const mostSpokenLang = function (limit) {
   return count.sort((a,b)=> b.count - a.count).filter((c,i)=> i < limit)
 }
 
-console.log(mostSpokenLang(10))
+// console.log(mostSpokenLang(10))
+
+
+newValue = {
+  dayIn: '2024-09-10',
+  hourIn: '09:00',
+  dayOut:'',
+  hourOut: '',
+  checkin: this.dayIn + ' ' + this.hourIn,
+  checkout: this.dayOut + ' ' + this.hourOut
+}
+function ValidInputValues(newValue){
+        
+        if( !moment(newValue.dayIn, 'YYYY-MM-DD', true).isValid() || !moment(newValue.hourIn, 'HH:mm',true).isValid()){
+          console.log('COMPRUEBA HORA DE ENTRADA');
+          return false
+        }
+
+        if (newValue.dayOut && newValue.hourOut) {
+          if(!moment(newValue.dayOut,'YYYY-MM-DD', true).isValid() || !moment(newValue.hourOut, 'HH:mm', true).isValid()){
+            console.log('fecha checkout no válida');
+            return false
+          }
+        }
+        console.log('true');
+        
+        return true    
+}
+
+
+ValidInputValues(newValue)
