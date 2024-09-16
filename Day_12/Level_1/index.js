@@ -43,9 +43,7 @@ function isValidVariable(variable){
         const validRegex = /^[a-zA-Z_][\w_]*$/
         return validRegex.test(variable)
     }
-
     return false
-
 }
 
 
