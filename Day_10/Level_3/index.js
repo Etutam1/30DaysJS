@@ -29,31 +29,3 @@ const mostSpokenLang = function (limit) {
 // console.log(mostSpokenLang(10))
 
 
-newValue = {
-  dayIn: '2024-09-10',
-  hourIn: '09:00',
-  dayOut:'',
-  hourOut: '',
-  checkin: this.dayIn + ' ' + this.hourIn,
-  checkout: this.dayOut + ' ' + this.hourOut
-}
-function ValidInputValues(newValue){
-        
-        if( !moment(newValue.dayIn, 'YYYY-MM-DD', true).isValid() || !moment(newValue.hourIn, 'HH:mm',true).isValid()){
-          console.log('COMPRUEBA HORA DE ENTRADA');
-          return false
-        }
-
-        if (newValue.dayOut && newValue.hourOut) {
-          if(!moment(newValue.dayOut,'YYYY-MM-DD', true).isValid() || !moment(newValue.hourOut, 'HH:mm', true).isValid()){
-            console.log('fecha checkout no válida');
-            return false
-          }
-        }
-        console.log('true');
-        
-        return true    
-}
-
-
-ValidInputValues(newValue)
